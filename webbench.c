@@ -322,10 +322,11 @@ static int bench(void)
     FILE *f;
 
     /* check avaibility of target server */
+    // proxyhost url
     i=Socket(proxyhost==NULL?host:proxyhost,proxyport);
     if(i<0) { 
-    fprintf(stderr,"\nConnect to server failed. Aborting benchmark.\n");
-    return 1;
+        fprintf(stderr,"\nConnect to server failed. Aborting benchmark.\n");
+        return 1;
     }
     close(i);
     /* create pipe */
